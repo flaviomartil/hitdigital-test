@@ -11,7 +11,7 @@ const HomeForm: React.FC = () => {
     useEffect(() => {
         const fetchText = async () => {
             try {
-                const response = await axios.get('http://silverstripe.flaviomartil.tech/api/about-us');
+                const response = await axios.get('https://silverstripe.flaviomartil.tech/api/about-us');
                 const data = response.data;
                 setContent(data.Content);
             } catch (error) {
