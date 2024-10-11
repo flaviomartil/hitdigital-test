@@ -7,7 +7,6 @@
 .home-box {
     width: 100%;
     min-width: 680px;
-    min-height: 406px;
     display: flex;
     justify-content: center;
     align-items: center;
