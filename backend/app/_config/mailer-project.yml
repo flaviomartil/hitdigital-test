@@ -1,0 +1,8 @@
+---
+Name: mailer-project
+After: 'mailer'
+---
+SilverStripe\Core\Injector\Injector:
+  Symfony\Component\Mailer\Transport\TransportInterface:
+    constructor:
+      dsn: 'smtp://hitidigital@bol.com.br:Chester12@smtps.bol.com.br:465?encryption=ssl&auth_mode=cram-md5'

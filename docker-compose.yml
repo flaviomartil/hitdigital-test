@@ -1,0 +1,62 @@
+version: "3.8"
+
+services:
+  silverstripe:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8991:80"
+    volumes:
+      - ./backend:/var/www/html
+    depends_on:
+      - database
+    environment:
+      - DOCUMENT_ROOT=/var/www/html/public
+      - SS_TRUSTED_PROXY_IPS=*
+      - SS_ENVIRONMENT_TYPE=dev
+      - SS_DATABASE_SERVER=database
+      - SS_DATABASE_NAME=SS_mysite
+      - SS_DATABASE_USERNAME=root
+      - SS_DATABASE_PASSWORD=
+      - SMTP_HOST=smtp.mailersend.net
+      - SMTP_PORT=587
+      - SMTP_USERNAME=MS_TwfpTe@trial-v69oxl5nk2kl785k.mlsender.net
+      - SMTP_PASSWORD=ftE6yiC1aKa0QKsJ
+      - SMTP_FROM_EMAIL=flaviomartil5@gmail.com
+      - SMTP_FROM_NAME=Flavio Martil
+
+    networks:
+      - app-network
+
+  database:
+    image: mysql:5.7
+    ports:
+      - "3397:3306"
+    environment:
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+    volumes:
+      - db-data:/var/lib/mysql
+    networks:
+      - app-network
+
+  frontend:
+    image: node:20.17.0
+    container_name: frontend
+    working_dir: /app
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    ports:
+      - "3998:3000"
+    command: sh -c "npm install && npm run dev"
+    depends_on:
+      - silverstripe
+    networks:
+      - app-network
+
+volumes:
+  db-data:
+
+networks:
+  app-network:

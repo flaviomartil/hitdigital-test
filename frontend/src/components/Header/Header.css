@@ -1,0 +1,30 @@
+.header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.header-title {
+    display:none;
+}
+
+.header-logo {
+    margin-bottom: 10px;
+}
+
+.logo-image {
+    width: 100px;
+    height: auto;
+}
+
+.header-title {
+    text-align: center;
+    padding-bottom: 5px;
+}
+
+.page-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+}

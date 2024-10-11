@@ -1,0 +1,13 @@
+
+---
+Name: approutes
+After:
+  - '#rootroutes'
+  - '#coreroutes'
+---
+SilverStripe\Control\Director:
+  rules:
+    '/api/about-us': 'App\Controller\AboutUsController'
+    'api/send-email': 'App\Controller\EmailController'
+    SilverStripe\Control\Middleware\HTTPMiddleware:
+      App\Middleware\CORSMiddleware: true

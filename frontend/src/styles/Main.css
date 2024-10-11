@@ -1,0 +1,27 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: rgba(45, 45, 45, 1);
+}
+
+.intro, .contact {
+    font-size: 22px;
+    color: white;
+}
+
+body {
+    font-size: 14px;
+    background: rgba(45, 45, 45, 1);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #ffffff;
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: center;
+    }
+}

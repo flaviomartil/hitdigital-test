@@ -1,0 +1,24 @@
+# Stage 1: Install Composer
+FROM composer:2.0 as composer
+
+# Stage 2: Build the final image
+FROM brettt89/silverstripe-web:8.1-apache
+
+ENV DOCUMENT_ROOT /var/www/html
+
+RUN mkdir -p $DOCUMENT_ROOT
+
+COPY . $DOCUMENT_ROOT
+WORKDIR $DOCUMENT_ROOT
+
+# Copy the Composer binary from the temporary image
+COPY --from=composer /usr/bin/composer /usr/bin/composer
+
+# Switch to the root user
+USER root
+
+# Change ownership
+RUN  chown -R www-data /var/www/html/public
+RUN  chown -R www-data /var/www/html/.graphql-generated
+# Switch back to the www-data user
+EXPOSE 80 3306

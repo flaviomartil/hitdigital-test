@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.home-box {
+    width: 100%;
+    min-width: 680px;
+    min-height: 406px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+.content-container img {
+    max-width: 100%;
+    height: auto;
+}
+
+.content-container iframe {
+    max-width: 100%;
+    height: auto;
+}
+
+.content-container pre {
+    max-width: 100%;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.content-container p,
+.content-container h1,
+.content-container h2,
+.content-container h3,
+.content-container h4,
+.content-container h5,
+.content-container h6,
+.content-container blockquote,
+.content-container ul,
+.content-container ol,
+.content-container li,
+.content-container code,
+.content-container div {
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+.content-container {
+    transition: all 0.3s ease-in-out;
+    display: block;
+    max-width: 100%;
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+.content-container p,
+.content-container h1,
+.content-container h2,
+.content-container h3,
+.content-container h4,
+.content-container h5,
+.content-container h6,
+.content-container blockquote,
+.content-container ul,
+.content-container ol,
+.content-container code {
+    margin: 0 0 20px;
+}
+
+@media (max-width: 768px) {
+    .content-container {
+        font-size: 14px;
+    }
+
+    .home-box {
+        min-width: 100%;
+        padding: 15px;
+    }
+
+    .home-form {
+        width: 100%;
+    }
+}
+
+.home-form h1 {
+    margin: 0 0 20px;
+}
+
+.home-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 15px;
+    box-sizing: border-box;
+}
+
+.table {
+    border-collapse: collapse;
+    border: 1px solid #d4d4d4;
+    border-spacing: 0;
+    margin: 0 0 10px;
+    text-align: left;
+}
+
+.table tr:nth-child(even) {
+    background-color: #ededed;
+}
+
+.table th,
+.table thead td {
+    background-color: #ededed;
+}
+
+.table td,
+.table th {
+    padding: 2px 5px;
+    border: 1px solid #d4d4d4;
+    vertical-align: top;
+}
+
+.table th {
+    font-weight: bold;
+}
